@@ -9,7 +9,7 @@ export const links = [
 	{ 
 		name: "Instagram", 
 		link: 
-"https://www.instagram.com/arun_kumaar_yt/?hl=en", 
+"https://www.instagram.com/arun_kumaar_16/?hl=en", 
 		image: 
 "https://p7.hiclipart.com/preview/5/164/976/thepix-digital-marketing-logo-shiftdelete-instagram-logo.jpg", 
 	}, 
@@ -24,7 +24,7 @@ export const links = [
 	{ 
 		name: "Github", 
 		link: 
-"https://github.com/AlphaVlogger-YT", 
+"https://github.com/ByteNinjaOfficial", 
 		image: 
 "https://pngimg.com/d/github_PNG40.png", 
 	}, 
