@@ -10,7 +10,9 @@
 
 body { 
 	font-family: "Montserrat", sans-serif; 
-	background-color: #060c21; 
+	background: #3A2D39;
+	background: conic-gradient(from 315deg, #3A2D39, #09DCED);
+	
 } 
 
 main { 
@@ -68,8 +70,15 @@ a {
 	color: white; 
 } 
 
+.Sub-Greetings { 
+	font-size: 1.5rem; 
+	font-weight: 700; 
+	margin-bottom: 2rem; 
+	color: white; 
+}
+
 .about { 
-	font-size: 1rem; 
+	font-size: 1.5rem; 
 	font-weight: 500; 
 	margin-bottom: 2rem; 
 	color: white; 
