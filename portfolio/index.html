@@ -3,87 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link type="text/css" rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>ByteNinja's Portfolio</title>
+    <title>ByteNinja | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="grid-2">
-        <div class="section-1">
-            <i class="fas fa-code fa-5x white"></i>
-            <h2>Arun Kumaar TS</h2>
-            <p>@ByteNinjaOffical</p>
-            <p>TamilNadu , India.</p>
-            <a href="https://www.linkedin.com/in/arun-kumaar-aa8611300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/ByteNinjaOfficial"><i class="fab fa-github"></i></a>
-        </div>
-        <div class="section-2">
-            <h2>About</h2>
-            <p>Hi, I am Arunkumaar who is a student who is in the quest of exploring the Cyber Security and Networking from India.</p>
-            <p>A Networking Engineer by day, Cyber Security Pentester by night. Building secure systems and
-                breaking them to make them stronger. Passionate about finding vulnerabilities and protecting
-                against cyber threats. Always learning, always improving!</p>
+    <audio id="background-music" src="/new project/assets/background-music.mp3" autoplay loop></audio>
 
-            <h2>Experience</h2>
-            <p>"Still learning, but got some Experience while learning CCNA and Network Pentesting"</p>
+    <div class="mute-unmute" onclick="toggleMute()">🔊</div>
 
-            <h2>Skills</h2>
-            <div class="container">
-                <div class="skill">
-                    <p>CCNA</p>
-                    <div class="skill-bar skill1">
-                        <span class="skill-count">30%</span>
-                    </div>
-                </div>
-                <!-- skill 1-->
-                <div class="skill">
-                    <p>Linux</p>
-                    <div class="skill-bar skill2">
-                        <span class="skill-count">80%</span>
-                    </div>
-                </div>
-                <!-- skill 2-->
-                <div class="skill">
-                    <p>Hardware Networking</p>
-                    <div class="skill-bar skill3">
-                        <span class="skill-count">60%</span>
-                    </div>
-                </div>
-                <!-- skill 3-->
-                <div class="skill">
-                    <p>Software Networking</p>
-                    <div class="skill-bar skill4">
-                        <span class="skill-count">65%</span>
-                    </div>
-                </div>
-                <!-- skill 4-->
-                <div class="skill">
-                    <p>Docker</p>
-                    <div class="skill-bar skill5">
-                        <span class="skill-count">40%</span>
-                    </div>
-                </div>
-                <!-- skill 5-->
-                <div class="skill">
-                    <p>Python</p>
-                    <div class="skill-bar skill6">
-                        <span class="skill-count">70%</span>
-                    </div>
-                </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="logo">
+            <img src="/new project/assets/logo.png" alt="ByteNinja Logo">
+            <div class="rotating-text">
+                <span class="text-set">Hi, I'm ByteNinja</span>
+                <span class="tagline">Welcome to My Studio</span>
             </div>
-
-            <h2>Projects</h2>
-            <a href="https://byteninjaofficial.github.io/under_maintenance">Project 1</a>
-            <a href="https://byteninjaofficial.github.io/under_maintenance">Project 2</a>
-            <a href="https://byteninjaofficial.github.io/under_maintenance">Project 3</a>
-            <a href="https://byteninjaofficial.github.io/under_maintenance">Project 4</a>
-            <a href="https://byteninjaofficial.github.io/under_maintenance">Project 5</a>
-            <h2>Contact</h2>
-            <p>arunkumaar16.yt@gmail.com</p>
         </div>
-    </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-intro">
+        <div class="intro-text">
+            <p>
+                As a Networking Engineer by day and a Cyber Security Penetration tester by night, I’m deeply involved in both constructing and securing digital environments. My role involves not only building reliable networks but also analyzing and addressing security vulnerabilities. I’m passionate about both creating robust systems and protecting them from cyber threats. My commitment to continuous learning and professional growth fuels my drive to stay at the forefront of technology and ensure that systems are well-protected and resilient.
+            </p>
+            <button class="download-cv">Download CV</button>
+        </div>
+        <div class="skills-bar">
+            <div class="skill"><span>CCNA</span><div class="progress"><div class="progress-bar" style="width: 30%;"></div></div></div>
+            <div class="skill"><span>Hardware Networking</span><div class="progress"><div class="progress-bar" style="width: 35%;"></div></div></div>
+            <div class="skill"><span>Software Networking</span><div class="progress"><div class="progress-bar" style="width: 75%;"></div></div></div>
+            <div class="skill"><span>Docker</span><div class="progress"><div class="progress-bar" style="width: 40%;"></div></div></div>
+            <div class="skill"><span>Python</span><div class="progress"><div class="progress-bar" style="width: 17%;"></div></div></div>
+            <div class="skill"><span>DaVinci Resolve</span><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div></div>
+            <div class="skill"><span>C/C++</span><div class="progress"><div class="progress-bar" style="width: 65%;"></div></div></div>
+            <div class="skill"><span>Linux</span><div class="progress"><div class="progress-bar" style="width: 65%;"></div></div></div>
+            <!-- Add more skills as needed -->
+        </div>
+    </section>
+
+    <section id="links" class="link-tree">
+        <a href="#" class="link-btn">Instagram</a>
+        <a href="#" class="link-btn">Email</a>
+        <a href="#" class="link-btn">GitHub</a>
+        <a href="#" class="link-btn">LinkedIn</a>
+    </section>
+
+    <section id="gallery" class="photography-gallery">
+        <div class="image-frame"><img src="/new project/assets/image1.jpg" alt="Photography 1"></div>
+        <div class="image-frame"><img src="/new project/assets/image2.jpg" alt="Photography 2"></div>
+        <div class="image-frame"><img src="/new project/assets/image3.jpg" alt="Photography 3"></div>
+        <div class="image-frame"><img src="/new project/assets/image4.jpg" alt="Photography 4"></div>
+    </section>
+
+    <section id="projects" class="project-showcase">
+        <div class="project">Project 1</div>
+        <div class="project">Project 2</div>
+        <div class="project">Project 3</div>
+        <button class="show-more">Show More</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ByteNinja. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
