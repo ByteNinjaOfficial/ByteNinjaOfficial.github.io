@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ByteNinja's portfolio showcasing skills in networking, cybersecurity, and more.">
+    <meta property="og:title" content="ByteNinja | Portfolio">
+    <meta property="og:description" content="Explore ByteNinja's skills in networking and cybersecurity, along with a collection of projects and photography.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:url" content="http://yourwebsite.com">
     <title>ByteNinja | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+    <!-- Particle Effect Canvas -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <script src="scripts.js"></script>
+
     <audio id="background-music" src="assets/background-music.mp3" autoplay loop></audio>
 
-    <div class="mute-unmute" onclick="toggleMute()">🔊</div>
+    <div class="mute-unmute" onclick="toggleMute()" aria-label="Toggle mute/unmute">🔊</div>
 
     <nav class="navbar">
         <ul>
@@ -44,18 +55,17 @@
             <div class="skill"><span>Software Networking</span><div class="progress"><div class="progress-bar" style="width: 75%;"></div></div></div>
             <div class="skill"><span>Docker</span><div class="progress"><div class="progress-bar" style="width: 40%;"></div></div></div>
             <div class="skill"><span>Python</span><div class="progress"><div class="progress-bar" style="width: 17%;"></div></div></div>
-            <div class="skill"><span>DaVinci Resolve</span><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div></div>
+            <div class="skill"><span>DaVinci Resolve</span><div class="progress"><div class="progress-bar" style="width: 40%;"></div></div></div>
             <div class="skill"><span>C/C++</span><div class="progress"><div class="progress-bar" style="width: 65%;"></div></div></div>
             <div class="skill"><span>Linux</span><div class="progress"><div class="progress-bar" style="width: 65%;"></div></div></div>
-            <!-- Add more skills as needed -->
         </div>
     </section>
 
     <section id="links" class="link-tree">
-        <a href="https://www.instagram.com/arun_kumaar_16/?hl=en" class="link-btn">Instagram</a>
-        <a href="mailto:arunkumaar16.yt@gmail.com" class="link-btn">Email</a>
-        <a href="https://github.com/ByteNinjaOfficial" class="link-btn">GitHub</a>
-        <a href="https://www.linkedin.com/in/arunkumaar-ts-aa8611300" class="link-btn">LinkedIn</a>
+        <a href="https://www.instagram.com/arun_kumaar_16/?hl=en" class="link-btn"><img src="assets/instagram-logo.png" alt="Instagram"></a>
+        <a href="mailto:arunkumaar16.yt@gmail.com" class="link-btn"><img src="assets/email-logo.png" alt="Email"></a>
+        <a href="https://github.com/ByteNinjaOfficial" class="link-btn"><img src="assets/github-logo.png" alt="GitHub"></a>
+        <a href="https://www.linkedin.com/in/arunkumaar-ts-aa8611300" class="link-btn"><img src="assets/linkedin-logo.png" alt="LinkedIn"></a>
     </section>
 
     <section id="gallery" class="photography-gallery">
@@ -75,7 +85,6 @@
     <footer>
         <p>&copy; 2024 ByteNinja. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
+    
 </body>
 </html>

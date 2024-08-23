@@ -86,12 +86,13 @@ a {
 
 .hero-section .tagline {
     font-size: 24px;
-    color: gold;
+    color: rgb(12, 217, 231);
+    display: block; /* Ensures tagline is under the text-set */
 }
 
 /* Portfolio Section */
 .portfolio-intro {
-    padding: 50px 20px;
+    height: 100vh;  
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -143,12 +144,11 @@ a {
 
 .skills-bar .progress-bar {
     height: 100%;
-    background: linear-gradient(to right, #ff0066, #00ffcc);
+    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
 }
 
 /* Link Tree Section */
 .link-tree {
-    padding: 50px 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -177,10 +177,11 @@ a {
 
 .photography-gallery .image-frame {
     width: 45%;
-    border: 5px solid gold;
-    padding: 10px;
+    border: 5px solid transparent;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.6);
+    border-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59) 1;
+    padding: 10px;
 }
 
 .photography-gallery .image-frame img {
@@ -199,7 +200,8 @@ a {
     margin: 20px 0;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
-    border: 5px solid gold;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59) 1;
 }
 
 .project-showcase .show-more {
@@ -224,9 +226,14 @@ footer {
     background: rgba(0, 0, 0, 0.8);
 }
 
-/* Mouse Trail Effect */
-.trail-circle {
-    position: absolute;
-    z-index: 9999; /* Ensure it is above other content */
-    transition: left 0.05s ease, top 0.05s ease;
+/* Canvas for Particle Effect */
+#particlesCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9998; /* Ensure it is below the other content */
+    display: none; /* Initially hidden */
 }
