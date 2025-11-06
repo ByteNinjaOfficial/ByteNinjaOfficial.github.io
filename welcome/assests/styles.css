@@ -1,0 +1,453 @@
+:root {
+  /* Cyber theme colors */
+  --primary-bg: linear-gradient(135deg, #0a0b1a, #1a1b2e);
+  --card-bg: rgba(0, 255, 255, 0.05);
+  --gradient: linear-gradient(90deg, #00ffff, #00ff41);
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --transition: all 0.3s ease;
+
+  /* Cyber accent colors */
+  --cyber-cyan: #00ffff;
+  --cyber-green: #00ff41;
+  --cyber-purple: #8b5cf6;
+  --cyber-border: #2d2e4a;
+  
+  /* Grid pattern for cyber effect */
+  --grid-pattern: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, monospace;
+  background: var(--primary-bg);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Matrix-style background effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(0, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(0, 255, 65, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(139, 92, 246, 0.3), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(0, 255, 255, 0.2), transparent);
+  background-repeat: repeat;
+  background-size: 200px 150px;
+  animation: matrix-rain 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes matrix-rain {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-200px, -150px); }
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.hero-card {
+  background: var(--card-bg);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4), 
+    0 1px 3px rgba(0, 255, 255, 0.1),
+    inset 0 1px 0 rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 255, 255, 0.1),
+    rgba(0, 255, 65, 0.05),
+    rgba(0, 255, 255, 0)
+  );
+  transform: rotate(30deg);
+  z-index: -1;
+}
+
+.hero-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.5), 
+    0 5px 15px rgba(0, 255, 255, 0.3),
+    inset 0 1px 0 rgba(0, 255, 255, 0.2);
+  border-color: rgba(0, 255, 255, 0.4);
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 2px;
+}
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: cyber-glow 3s ease-in-out infinite;
+  position: relative;
+}
+
+/* Cyber glow animation for text */
+@keyframes cyber-glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px rgba(0, 255, 65, 0.7));
+  }
+}
+
+/* Fallback for gradient text */
+@supports not (-webkit-background-clip: text) {
+  .gradient-text {
+    background: none;
+    color: var(--cyber-cyan);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+}
+
+.bio {
+  margin: 1.2rem 0 2.2rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+  transition: left 0.7s ease;
+}
+
+.social-link:hover {
+  background: linear-gradient(90deg, var(--cyber-cyan), var(--cyber-green));
+  color: #0a0b1a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+  border-color: var(--cyber-cyan);
+}
+
+.social-link:hover::before {
+  left: 100%;
+}
+
+.social-link i {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--cyber-cyan);
+  transition: var(--transition);
+  backdrop-filter: blur(5px);
+}
+
+.theme-toggle:hover {
+  background: rgba(0, 255, 255, 0.2);
+  transform: rotate(30deg);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  border-color: var(--cyber-cyan);
+}
+
+footer {
+  margin-top: 2.2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+footer p {
+  position: relative;
+}
+
+footer p::before {
+  content: '> ';
+  color: var(--cyber-green);
+  font-weight: bold;
+}
+
+/* Enhanced Light theme variables for cyber */
+body.light-theme {
+  --primary-bg: linear-gradient(135deg, #eef5ff, #d9e8ff);
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --gradient: linear-gradient(90deg, #0072ff, #00c6ff);
+  --text-primary: #1a202c;
+  --text-secondary: #2d3748;
+  --text-muted: #4a5568;
+  --cyber-cyan: #0072ff;
+  --cyber-green: #00c6ff;
+  --cyber-purple: #6366f1;
+  --cyber-border: #cbd5e0;
+  --grid-pattern: linear-gradient(rgba(0, 114, 255, 0.1) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(0, 114, 255, 0.1) 1px, transparent 1px);
+}
+
+body.light-theme::before {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(0, 114, 255, 0.2), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(0, 198, 255, 0.15), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(99, 102, 241, 0.2), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(0, 114, 255, 0.15), transparent);
+}
+
+body.light-theme .hero-card {
+  border: 1px solid rgba(0, 114, 255, 0.3);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1), 
+    0 1px 3px rgba(0, 114, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .hero-card:hover {
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.15), 
+    0 5px 15px rgba(0, 114, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 114, 255, 0.5);
+}
+
+body.light-theme .hero-card::before {
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 114, 255, 0.1),
+    rgba(0, 198, 255, 0.05),
+    rgba(0, 114, 255, 0)
+  );
+}
+
+body.light-theme .social-link {
+  background: rgba(0, 114, 255, 0.1);
+  border: 1px solid rgba(0, 114, 255, 0.2);
+  color: var(--text-primary);
+}
+
+body.light-theme .social-link:hover {
+  background: linear-gradient(90deg, var(--cyber-cyan), var(--cyber-green));
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+  border-color: var(--cyber-cyan);
+}
+
+body.light-theme .theme-toggle {
+  background: rgba(0, 114, 255, 0.1);
+  border: 1px solid rgba(0, 114, 255, 0.2);
+  color: var(--cyber-cyan);
+}
+
+body.light-theme .theme-toggle:hover {
+  background: rgba(0, 114, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 114, 255, 0.4);
+  border-color: var(--cyber-cyan);
+}
+
+body.light-theme footer p::before {
+  color: var(--cyber-green);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Terminal cursor effect */
+@keyframes terminal-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Add a subtle terminal cursor to the name */
+.gradient-text::after {
+  content: '_';
+  color: var(--cyber-green);
+  animation: terminal-blink 1.5s infinite;
+  margin-left: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .hero-card {
+    padding: 2rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .bio {
+    font-size: 0.95rem;
+  }
+
+  .social-link {
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .theme-toggle {
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hero-card {
+    border-width: 2px;
+    border-color: var(--cyber-cyan);
+  }
+
+  .social-link {
+    border-width: 2px;
+  }
+
+  .gradient-text {
+    background: none !important;
+    color: var(--cyber-cyan) !important;
+    -webkit-text-fill-color: var(--cyber-cyan) !important;
+  }
+}
+
+/* Loading state */
+.hero-card {
+  opacity: 0;
+  animation: fade-in-up 1s ease 0.3s forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Additional cyber effects */
+.social-link:nth-child(1):hover { box-shadow: 0 5px 15px rgba(0, 123, 181, 0.4); }
+.social-link:nth-child(2):hover { box-shadow: 0 5px 15px rgba(36, 41, 46, 0.4); }
+.social-link:nth-child(3):hover { box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4); }
+.social-link:nth-child(4):hover { box-shadow: 0 5px 15px rgba(0, 255, 65, 0.4); }
+
+/* Cyber grid lines effect */
+.hero-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--grid-pattern);
+  background-size: 20px 20px;
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: 1;
+}

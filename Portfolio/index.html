@@ -3,88 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ByteNinja's portfolio showcasing skills in networking, cybersecurity, and more.">
-    <meta property="og:title" content="ByteNinja | Portfolio">
-    <meta property="og:description" content="Explore ByteNinja's skills in networking and cybersecurity, along with a collection of projects and photography.">
-    <meta property="og:image" content="assets/logo.png">
-    <meta property="og:url" content="http://yourwebsite.com">
-    <title>ByteNinja | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Arunkumaar TS - Cybersecurity Enthusiast</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <!-- Particle Effect Canvas -->
-    <canvas id="particlesCanvas"></canvas>
+    <!-- Particle Background -->
+    <div id="particles-canvas"></div>
 
-    <script src="scripts.js"></script>
-
-    <audio id="background-music" src="assets/background-music.mp3" autoplay loop></audio>
-
-    <div class="mute-unmute" onclick="toggleMute()" aria-label="Toggle mute/unmute">🔊</div>
-
+    <!-- Navigation -->
     <nav class="navbar">
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#links">Links</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <span class="nav-logo"></span>
+                <span class="nav-title">Arunkumaar.TS</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a> 
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
 
-    <section id="hero" class="hero-section">
-        <div class="logo">
-            <img src="assets/logo.png" alt="ByteNinja Logo">
-            <div class="rotating-text">
-                <span class="text-set">Hi, I'm ByteNinja</span>
-                <span class="tagline">Welcome to My Studio</span>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="terminal-prompt">
+                <span class="terminal-symbol">$</span>
+                <span class="terminal-command">whoami</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="">Arunkumaar TS</span>
+            </h1>
+
+            <p class="hero-subtitle">Computer Science Student & Cybersecurity Enthusiast</p>
+            <p class="hero-role">Aspiring Security Engineer</p>
+
+            <div class="skills-array">
+                <span class="array-prefix">&gt; Skills: [</span>
+                <span class="typing-text" id="typing-text"></span>
+                <span class="typing-cursor">|</span>
+                <span class="array-suffix">]</span>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn--primary">View Projects</a>
+                <a href="#contact" class="btn btn--outline">Contact Me</a>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="scroll-arrow">↓</div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="portfolio-intro">
-        <div class="intro-text">
-            <p>
-                As a Networking Engineer by day and a Cyber Security Penetration tester by night, I’m deeply involved in both constructing and securing digital environments. My role involves not only building reliable networks but also analyzing and addressing security vulnerabilities. I’m passionate about both creating robust systems and protecting them from cyber threats. My commitment to continuous learning and professional growth fuels my drive to stay at the forefront of technology and ensure that systems are well-protected and resilient.
-            </p>
-            <button class="download-cv">Download CV</button>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="terminal-prefix">&gt;</span>
+                <h2>About Me</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-main">
+                    <div class="about-bio card">
+                        <div class="card__body">
+                            <p>Hi, I'm Arunkumaar TS, currently pursuing a BE in Computer Science and Engineering with a strong passion for cybersecurity and networking. I'm actively sharpening my skills through hands-on labs and practical projects while working toward industry certifications.</p>
+                            <p>My growing expertise includes penetration testing, scripting, and cloud security, with a focus on building practical projects and staying ahead of modern threats. I'm particularly interested in cloud security, digital forensics, and malware analysis, and I'm fascinated by how AI and automation are shaping the future of cybersecurity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-features">
+                    <div class="feature-card card">
+                        <div class="card__body">
+                            <div class="feature-icon">🛡️</div>
+                            <h3>Security Research</h3>
+                            <p>Developing tools for network forensics and threat detection through practical research projects</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card card">
+                        <div class="card__body">
+                            <div class="feature-icon">🏗️</div>
+                            <h3>Infrastructure & Labs</h3>
+                            <p>Building comprehensive home lab environments for hands-on learning in virtualization and security</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card card">
+                        <div class="card__body">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Automation & Tools</h3>
+                            <p>Creating efficient solutions for file transfer, network monitoring, and security automation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interests-terminal card">
+                    <div class="card__body">
+                        <div class="terminal-header">
+                            <span class="terminal-prefix">$</span>
+                            <span>cat interests.txt</span>
+                        </div>
+                        <div class="terminal-content">
+                            <ul class="terminal-list">
+                                <li>&gt; Cloud Security - AWS</li>
+                                <li>&gt; Malware Analysis </li>
+                                <li>&gt; AI/ML in Cybersecurity</li>
+                                <li>&gt; Network Security & Monitoring</li>
+                                <li>&gt; Home Automation & IoT Security</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="skills-bar">
-            <div class="skill"><span>CCNA</span><div class="progress"><div class="progress-bar" style="width: 30%;"></div></div></div>
-            <div class="skill"><span>Hardware Networking</span><div class="progress"><div class="progress-bar" style="width: 35%;"></div></div></div>
-            <div class="skill"><span>Software Networking</span><div class="progress"><div class="progress-bar" style="width: 75%;"></div></div></div>
-            <div class="skill"><span>Docker</span><div class="progress"><div class="progress-bar" style="width: 40%;"></div></div></div>
-            <div class="skill"><span>Python</span><div class="progress"><div class="progress-bar" style="width: 17%;"></div></div></div>
-            <div class="skill"><span>DaVinci Resolve</span><div class="progress"><div class="progress-bar" style="width: 40%;"></div></div></div>
-            <div class="skill"><span>C/C++</span><div class="progress"><div class="progress-bar" style="width: 65%;"></div></div></div>
-            <div class="skill"><span>Linux</span><div class="progress"><div class="progress-bar" style="width: 65%;"></div></div></div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="terminal-prefix">&gt;</span>
+                <h2>Featured Projects</h2>
+            </div>
+            <p class="section-subtitle">A showcase of my hands-on cybersecurity and networking projects, demonstrating practical skills in threat detection, infrastructure design, and automation.</p>
+
+            <div class="projects-grid">
+                <div class="project-card card">
+                    <div class="project-header">
+                        <div class="project-code-bg">
+                            <div class="code-line"></div>
+                            <div class="code-line short"></div>
+                            <div class="code-line"></div>
+                            <div class="code-line medium"></div>
+                        </div>
+                        <span class="project-prompt">~/PROBE $</span>
+                        <span class="status status--success">Active</span>
+                    </div>
+                    <div class="card__body">
+                        <h3>Network Forensics – PROBE Tool</h3>
+                        <p>Developed an agentless network monitoring solution that detects IP/MAC spoofing and packet anomalies to uncover hidden threats. Features automatic/manual device blocking, hidden connection tracing, and passive intrusion detection without endpoint installation.</p>
+
+                        <div class="project-tags">
+                            <span class="tag tag--python">Python</span>
+                            <span class="tag tag--network">Network Analysis</span>
+                            <span class="tag tag--security">Threat Detection</span>
+                            <span class="tag tag--tool">Security Tool</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/ByteNinjaOfficial" class="btn btn--sm btn--outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card card">
+                    <div class="project-header">
+                        <div class="project-code-bg">
+                            <div class="code-line"></div>
+                            <div class="code-line medium"></div>
+                            <div class="code-line short"></div>
+                            <div class="code-line"></div>
+                        </div>
+                        <span class="project-prompt">~/HomeLab $</span>
+                        <span class="status status--success">Running</span>
+                    </div>
+                    <div class="card__body">
+                        <h3>Advanced Home Lab & Automation</h3>
+                        <p>Built a Type-1 hypervisor-based environment featuring OPNsense/pfSense firewalls, Pi-hole DNS filtering, and multiple Linux distributions. Includes Home Assistant automation, local AI assistant integration, and LXC/Docker containerization.</p>
+
+                        <div class="project-tags">
+                            <span class="tag tag--system">Virtualization</span>
+                            <span class="tag tag--network">Networking</span>
+                            <span class="tag tag--automation">Automation</span>
+                            <span class="tag tag--security">Security</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/ByteNinjaOfficial" class="btn btn--sm btn--outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card card">
+                    <div class="project-header">
+                        <div class="project-code-bg">
+                            <div class="code-line short"></div>
+                            <div class="code-line"></div>
+                            <div class="code-line medium"></div>
+                            <div class="code-line"></div>
+                        </div>
+                        <span class="project-prompt">~/SyncBridge $</span>
+                        <span class="status status--info">Deployed</span>
+                    </div>
+                    <div class="card__body">
+                        <h3>SyncBridge – Local File Transfer Tool</h3>
+                        <p>Created a Python-based high-speed file transfer solution for local networks, capable of handling large data volumes more efficiently than traditional methods. Lightweight and deployable as a Docker container for scalability.</p>
+
+                        <div class="project-tags">
+                            <span class="tag tag--python">Python</span>
+                            <span class="tag tag--network">Networking</span>
+                            <span class="tag tag--tool">File Transfer</span>
+                            <span class="tag tag--system">Docker</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/ByteNinjaOfficial/Syncbridge" class="btn btn--sm btn--outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-footer">
+                <p>More projects and open-source contributions available on request.</p>
+            </div>
         </div>
     </section>
 
-    <section id="links" class="link-tree">
-        <a href="https://www.instagram.com/arun_kumaar_16/?hl=en" class="link-btn"><img src="assets/instagram-logo.png" alt="Instagram"></a>
-        <a href="mailto:arunkumaar16.yt@gmail.com" class="link-btn"><img src="assets/email-logo.png" alt="Email"></a>
-        <a href="https://github.com/ByteNinjaOfficial" class="link-btn"><img src="assets/github-logo.png" alt="GitHub"></a>
-        <a href="https://www.linkedin.com/in/arunkumaar-ts-aa8611300" class="link-btn"><img src="assets/linkedin-logo.png" alt="LinkedIn"></a>
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="terminal-prefix">&gt;</span>
+                <h2>Technical Skills</h2>
+            </div>
+
+            <div class="skills-grid">   
+                <div class="skill-category card"> 
+                    <div class="card__body">
+                        <div class="skill-header">
+                            <span class="skill-icon">💻</span>
+                            <h3>Programming & Scripting</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">Shell (Basic)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category card">
+                    <div class="card__body">
+                        <div class="skill-header">
+                            <span class="skill-icon">🛡️</span>
+                            <h3>Security Tools</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-item">Wireshark</span>
+                            <span class="skill-item">Nmap</span>
+                            <span class="skill-item">Burp Suite</span>
+                            <span class="skill-item">Metasploit</span>
+                            <span class="skill-item">Wifite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category card">
+                    <div class="card__body">
+                        <div class="skill-header">
+                            <span class="skill-icon">🖥️</span>
+                            <h3>Virtualization & Containers</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-item">Proxmox VE</span>
+                            <span class="skill-item">VirtualBox</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">LXC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category card">
+                    <div class="card__body">
+                        <div class="skill-header">
+                            <span class="skill-icon">🐧</span>
+                            <h3>Operating Systems</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-item">Kali Linux</span>
+                            <span class="skill-item">Fedora KDE</span>
+                            <span class="skill-item">Ubuntu Server</span>
+                            <span class="skill-item">Windows</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category card">
+                    <div class="card__body">
+                        <div class="skill-header">
+                            <span class="skill-icon">🔥</span>
+                            <h3>Security Solutions</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-item">pfSense</span>
+                            <span class="skill-item">OPNsense</span>
+                            <span class="skill-item">Pi-hole</span>
+                            <span class="skill-item">Intrusion Detection</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category card">
+                    <div class="card__body">
+                        <div class="skill-header">
+                            <span class="skill-icon">☁️</span>
+                            <h3>Cloud & Automation</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-item">AWS</span>
+                            <span class="skill-item">IoT Security</span>
+                            <span class="skill-item">Network Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certifications">
+                <h3>Certifications & Training</h3>
+                <div class="cert-grid">
+                    <div class="cert-card card">
+                        <div class="card__body">
+                            <div class="cert-icon">☁️</div>
+                            <h4>AWS Cloud Practitioner</h4>
+                            <span class="status status--warning">In Progress</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card card">
+                        <div class="card__body">
+                            <div class="cert-icon">🌐</div>
+                            <h4>CCNA</h4>
+                            <span class="status status--warning">Planned</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card card">
+                        <div class="card__body">
+                            <div class="cert-icon">🛡️</div>
+                            <h4>CompTIA Security+</h4>
+                            <span class="status status--warning">Planned</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card card">
+                        <div class="card__body">
+                            <div class="cert-icon">🎯</div>
+                            <h4>CEH</h4>
+                            <span class="status status--warning">Planned</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card card">
+                        <div class="card__body">
+                            <div class="cert-icon">🖧</div>
+                            <h4>Tata Cybersecurity Analyst</h4>
+                            <span class="status status--success">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="gallery" class="photography-gallery">
-        <div class="image-frame"><img src="assets/image1.jpg" alt="Photography 1"></div>
-        <div class="image-frame"><img src="assets/image2.jpg" alt="Photography 2"></div>
-        <div class="image-frame"><img src="assets/image3.jpg" alt="Photography 3"></div>
-        <div class="image-frame"><img src="assets/image4.jpg" alt="Photography 4"></div>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="terminal-prefix">&gt;</span>
+                <h2>Get In Touch</h2>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <div class="contact-methods">
+                        <a href="mailto:arunkumaar16.yt@gmail.com.com" class="contact-method">
+                            <span class="contact-icon">📧</span>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">arunkumaar16.yt@gmail.com</span>
+                            </div>
+                            <span class="external-link">↗</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/arunkumaar-ts-aa8611300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="contact-method">
+                            <span class="contact-icon">💼</span>
+                            <div class="contact-details">
+                                <span class="contact-label">LinkedIn</span>
+                                <span class="contact-value">Connect professionally</span>
+                            </div>
+                            <span class="external-link">↗</span>
+                        </a>
+
+                        <a href="https://github.com/ByteNinjaOfficial" target="_blank" class="contact-method">
+                            <span class="contact-icon">💻</span>
+                            <div class="contact-details">
+                                <span class="contact-label">GitHub</span>
+                                <span class="contact-value">View my repositories</span>
+                            </div>
+                            <span class="external-link">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="skills-terminal card">
+                    <div class="card__body">
+                        <div class="terminal-header">
+                            <span class="terminal-prefix">$</span>
+                            <span>echo "Ready to collaborate on cybersecurity projects and learning opportunities"</span>
+                        </div>
+                        <div class="terminal-content">
+                            <p>I'm always interested in:</p>
+                            <ul class="terminal-list">
+                                <li>&gt; Cybersecurity research projects</li>
+                                <li>&gt; Open source security tools</li>
+                                <li>&gt; Learning opportunities </li>
+                                <li>&gt; Technical discussions & knowledge sharing</li>
+                                <li>&gt; Industry connections & networking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="projects" class="project-showcase">
-        <div class="project">Project 1</div>
-        <div class="project">Project 2</div>
-        <div class="project">Project 3</div>
-        <button class="show-more">Show More</button>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 ByteNinja. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-terminal">
+                    <span class="terminal-prefix">$</span>
+                    <span>echo "Building secure digital futures, one project at a time"</span>
+                </div>
+                <div class="footer-copy">
+                    <p>© 2024 ByteNinjaOfficial. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-    
+
+    <script src="./assets/app.js"></script>
 </body>
 </html>
