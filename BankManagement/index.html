@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bank Management System</h1>
+            <p>Byteninja's Bank Management System</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('dashboard')">Dashboard</button>
+            <button class="tab-btn" onclick="showTab('add-customer')">Add Customer</button>
+            <button class="tab-btn" onclick="showTab('customers')">View Customers</button>
+            <button class="tab-btn" onclick="showTab('transactions')">Transactions</button>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="tab-content active">
+            <div class="balance-card">
+                <h2>Total Bank Balance</h2>
+                <h1 id="totalBalance">₹ 0</h1>
+            </div>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Total Customers</h3>
+                    <div id="totalCustomers">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Transactions</h3>
+                    <div id="totalTransactions">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Avg Balance</h3>
+                    <div id="avgBalance">₹ 0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Customer -->
+        <div id="add-customer" class="tab-content">
+            <div class="form-group">
+                <label>Customer Name</label>
+                <input type="text" id="customerName" placeholder="Enter customer name">
+            </div>
+            <div class="form-group">
+                <label>Account Number</label>
+                <input type="text" id="accountNo" placeholder="e.g. 1234567890">
+            </div>
+            <div class="form-group">
+                <label>Initial Balance</label>
+                <input type="number" id="initialBalance" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+                <label>Account Type</label>
+                <select id="accountType">
+                    <option value="Savings">Savings Account</option>
+                    <option value="Current">Current Account</option>
+                    <option value="Fixed">Fixed Deposit</option>
+                </select>
+            </div>
+            <button class="btn" onclick="addCustomer()">Add Customer</button>
+            <div id="successMsg" class="success"></div>
+        </div>
+
+        <!-- View Customers -->
+        <div id="customers" class="tab-content">
+            <div class="table-container">
+                <table id="customersTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Account No</th>
+                            <th>Balance</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Transactions -->
+        <div id="transactions" class="tab-content">
+            <div class="form-group">
+                <label>Account Number</label>
+                <input type="text" id="transAccountNo" placeholder="Enter account number">
+            </div>
+            <div class="form-group">
+                <label>Transaction Type</label>
+                <select id="transType">
+                    <option value="deposit">Deposit</option>
+                    <option value="withdraw">Withdraw</option>
+                    <option value="transfer">Transfer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Amount</label>
+                <input type="number" id="transAmount" placeholder="0" min="0">
+            </div>
+            <div class="form-group" id="transferToGroup" style="display:none;">
+                <label>Transfer To Account</label>
+                <input type="text" id="transferToAccount" placeholder="Target account number">
+            </div>
+            <button class="btn" onclick="processTransaction()">Process Transaction</button>
+            <div class="table-container">
+                <table id="transactionsTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Account</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
